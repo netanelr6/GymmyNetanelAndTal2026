@@ -141,7 +141,7 @@ class Training(threading.Thread):
             s.exercise_completed = False
     
             while not s.exercise_completed:
-                time.sleep(4) # wait between exercises  #---------->TODO Tuning slepp
+                time.sleep(5) # wait between exercises  #---------->TODO Tuning slepp
 
                 s.reboot_flag = False
                 
