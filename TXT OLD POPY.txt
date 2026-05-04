@@ -92,8 +92,7 @@ class Poppy(threading.Thread):
         self.poppy.r_arm[3].goto_position(85, 1.5, wait=False)
         self.poppy.l_arm[3].goto_position(85, 1.5, wait=True)
         if s.robot_count:
-            if (s.Team_Number == 0 or s.Team_Number == 1) or not s.inter_aff:
-                say(str(counter + 1))
+            say(str(counter + 1))
         time.sleep(1.4)
 
     # EX3 - Raise Arms Bend Elbows
@@ -216,8 +215,7 @@ class Poppy(threading.Thread):
         self.poppy.l_shoulder_x.goto_position(0, 1, wait=False)
         self.poppy.r_shoulder_x.goto_position(0, 1, wait=True)
         if s.robot_count:
-            if (s.Team_Number == 0 or s.Team_Number == 1) or not s.inter_aff:
-                say(str(counter + 1))
+            say(str(counter + 1))
         time.sleep(1)
         if counter >= s.rep-1 or s.success_exercise:  # TODO - Change to something that works if it finished before 8 repetitions.
             self.poppy.r_elbow_y.goto_position(90, 1.5, wait=False)
@@ -269,8 +267,7 @@ class Poppy(threading.Thread):
         self.poppy.l_shoulder_y.goto_position(0, 1.5, wait=False)
         self.poppy.r_shoulder_y.goto_position(0, 1.5, wait=True)
         if s.robot_count:
-            if (s.Team_Number == 0 or s.Team_Number == 1) or not s.inter_aff:
-                say(str(counter + 1))
+            say(str(counter + 1))
         time.sleep(1)
 
     # EX 6 raise_arms_forward - one hand

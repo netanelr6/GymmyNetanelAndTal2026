@@ -37,14 +37,14 @@ if __name__ == '__main__':
 
 
 
-    s.WORKFLOW_MODE = 1        # 1=Normal, 2=Hardware, 3=Interactio #TODO --> update the value
+    s.WORKFLOW_MODE = 3        # 1=Normal, 2=Hardware, 3=Interactio #TODO --> update the value----->עדיין רלוונטי???
 
     s.inter_aff = False
     s.hardwere_aff = False
-    s.Team_Number = s.WORKFLOW_MODE #todo --->verifide if work welll
+    s.Team_Number = 2                  # s.WORKFLOW_MODE #todo --->verifide if work welll  #TODO --> update the value
     s.reboot_flag = False
 
-    # RUN_MODE = os.getenv('GYMMY_MODE', 'SIM') #TODO MYBE FO LATER
+    # RUN_MODE = os.getenv('GYMMY_MODE', 'SIM') #TODO MYBE FOr LATER
 
 
 

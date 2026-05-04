@@ -123,8 +123,8 @@ class Training(threading.Thread):
     def training_session(self):
         print("Training: start exercises")
         # TODO - adding random choice of exercises.
-        exercise_names = ["raise_arms_horizontally","raise_arms_bend_elbows", "bend_elbows", "open_and_close_arms",
-                          "open_and_close_arms_90", "raise_arms_forward"] #TODO our work list
+        exercise_names = ["raise_arms_horizontally","raise_arms_bend_elbows",  "open_and_close_arms", "bend_elbows",
+                           "raise_arms_forward" ,"open_and_close_arms_90"] #TODO our work list
         #exercise_names = ["raise_arms_horizontally", "bend_elbows", "raise_arms_bend_elbows", "open_and_close_arms",
         #                 "open_and_close_arms_90", "raise_arms_forward"] #maya origin
         for e in exercise_names:
