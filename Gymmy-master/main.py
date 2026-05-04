@@ -98,6 +98,24 @@ if __name__ == '__main__':
         s.performance_class = {}
         # s.adaptation_model = pickle.load(open(f'{adaptation_model_name}.sav', 'rb'))
 
+
+
+    #---------------------------------------
+    print("Waiting for researcher selection on screen...")
+    while not s.experiment_started:
+        try:
+            s.screen.update_idletasks()
+            s.screen.update()
+            time.sleep(0.01)
+        except Exception as e:
+            print(f"GUI Interaction Error: {e}")
+            break
+
+
+    #---------------------------------------
+
+
+
     # Start all threads
     s.camera.start()
     s.training.start()
