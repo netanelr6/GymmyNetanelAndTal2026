@@ -12,6 +12,9 @@ class Screen(tk.Tk):
         tk.Tk.__init__(self, className='Poppy')
         self._frame = None
 
+        self.attributes('-fullscreen', True)  # Set the window to fullscreen-------------------->N&T change
+
+
         self.switch_frame(SelectPage)
         # self.switch_frame(EyesPage) #--------------->maya original
 
@@ -85,7 +88,7 @@ if __name__ == "__main__":
 
 
 
-#------N&T add screnn-----------------
+#------N&T add screns-----------------
 
 class SelectPage(tk.Frame):
     def __init__(self, master):

@@ -134,6 +134,8 @@ class Training(threading.Thread):
                     s.hardwere_aff = True
                 elif s.Team_Number == 2:
                     s.inter_aff = True
+                    s.robot_count = True
+
 
 
             #---------------------------------------
@@ -155,6 +157,7 @@ class Training(threading.Thread):
                 
                     if s.inter_aff:
                         s.inter_aff = False
+                        s.robot_count = False
                 
                     s.reboot_flag = False
 

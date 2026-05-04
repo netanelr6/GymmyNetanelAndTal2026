@@ -99,7 +99,7 @@ if __name__ == '__main__':
         # s.adaptation_model = pickle.load(open(f'{adaptation_model_name}.sav', 'rb'))
 
 
-
+    s.screen = Screen()
     #---------------------------------------
     print("Waiting for researcher selection on screen...")
     while not s.experiment_started:
@@ -120,7 +120,6 @@ if __name__ == '__main__':
     s.camera.start()
     s.training.start()
     s.robot.start()
-    s.screen = Screen()
     image1 = Image.open('Pictures//icon.jpg')
     s.screen.tk.call('wm', 'iconphoto', s.screen._w, ImageTk.PhotoImage(image1))
     app = FullScreenApp(s.screen)
