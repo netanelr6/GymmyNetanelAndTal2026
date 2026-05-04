@@ -21,7 +21,40 @@ def print_hi(name):
 
 
 if __name__ == '__main__':
-    s.camera_num = 0  # 0 - webcam, 2 - second USB in maya's computer
+
+    #-------------------------------------------------
+    #NETANEL&tal SETTINGS
+
+    #otput file setting
+    s.project_folder = "netanel&tal_2026A_" # fulder name in dats
+    s.output_path = ""    # bild in main
+    s.save_outputs = True  # Set to False to disable folder creation, Excel saving, and logging
+
+    s.reboot_flag = False
+    s.exercise_completed = False
+
+    s.experiment_started = False #TODO whay its existe and wher we use it
+
+
+
+    s.WORKFLOW_MODE = 1        # 1=Normal, 2=Hardware, 3=Interactio #TODO --> update the value
+
+    s.inter_aff = False
+    s.hardwere_aff = False
+    s.Team_Number = s.WORKFLOW_MODE #todo --->verifide if work welll
+    s.reboot_flag = False
+
+    # RUN_MODE = os.getenv('GYMMY_MODE', 'SIM') #TODO MYBE FO LATER
+
+
+
+
+
+
+
+    #---------------------------------------------------
+    #ORIGINAL SRTTINGS
+    s.camera_num = 1  # 0 - webcam, 2 - second USB in maya's computer
 
     # Audio variables initialization
     language = 'Hebrew'
@@ -44,7 +77,7 @@ if __name__ == '__main__':
     s.training_done = False
     s.poppy_done = False
     s.camera_done = False
-    s.robot_count = True
+    s.robot_count = False #True
     s.try_again = False
     # Excel variable
     Excel.create_workbook()
@@ -56,7 +89,7 @@ if __name__ == '__main__':
     s.robot = Poppy()
 
     # Adaptation variables
-    s.adaptive = True
+    s.adaptive = False #True
     s.corrective_feedback = False
     s.one_hand = False
     if s.adaptive:

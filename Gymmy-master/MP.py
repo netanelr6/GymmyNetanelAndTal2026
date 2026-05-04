@@ -23,7 +23,7 @@ class MP(threading.Thread):
         mp_drawing_styles = mp.solutions.drawing_styles
         mp_pose = mp.solutions.pose
 
-        cap = cv2.VideoCapture(0) # 0 - webcam, 2 - second USB in maya's computer
+        cap = cv2.VideoCapture(1) # 0 - webcam, 2 - second USB in maya's computer
         image_width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)  # float `width`
         # cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1680)
         image_height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)  # float `height`
