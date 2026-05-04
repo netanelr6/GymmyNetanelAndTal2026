@@ -11,8 +11,36 @@ class Screen(tk.Tk):
         print("screen start")
         tk.Tk.__init__(self, className='Poppy')
         self._frame = None
-        self.switch_frame(EyesPage)
+
+        # self.switch_frame(SelectPage)
+        self.switch_frame(EyesPage) #--------------->maya original
+
         self["bg"] = "#F3FCFB"
+
+
+
+        #--------------------------------n&t CODE--------------------------------------------------
+        # גורם לחלון לקפוץ קדימה מעל ה-VS Code
+        self.lift()
+        self.attributes("-topmost", True)
+        self.focus_force()
+        self.bind("<Escape>", lambda e: self.attributes("-fullscreen", False))
+
+        self.bind_all("<Button-3>", self.reboot_from_mouse)   # קליק ימני
+        #self.bind_all("<Button-1>", self.reboot_from_mouse)
+        #--------------------------------------------------------------------------------------------
+
+
+    #------------------------------------n&t CODE-------------------    
+    def reboot_from_mouse(self, event=None):
+        print("RIGHT CLICK REBOOT TRIGGERED")
+        # מבטיח פוקוס (ליתר ביטחון)
+        self.focus_force()
+        s.reboot_flag = True
+    #    -------------------------------------------------------------
+
+
+
 
     def switch_frame(self, frame_class):
         """Destroys current frame and replaces it with a new one."""

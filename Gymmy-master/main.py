@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
     s.inter_aff = False
     s.hardwere_aff = False
-    s.Team_Number = 1                  # s.WORKFLOW_MODE #todo --->verifide if work welll  #TODO --> update the value
+    s.Team_Number = 2                  # s.WORKFLOW_MODE #todo --->verifide if work welll  #TODO --> update the value
     print(f"Team_Number is: {s.Team_Number}")
     s.reboot_flag = False
 
