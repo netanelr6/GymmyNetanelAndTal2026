@@ -1,13 +1,13 @@
 def __init__():
 
     #Netanel&tal - 2024-06-11 - Global variables for the project. These variables are used in all the files and are defined here to avoid circular imports.
-    global  project_folder = "netanel&tal_2026A_" # fulder name in dats
-    global  output_path = ""    # bild in main
-    global  save_outputs = True  # Set to False to disable folder creation, Excel saving, and logging
+    global  project_folder  # fulder name in dats
+    global  output_path # bild in main
+    global  save_outputs # Set to False to disable folder creation, Excel saving, and logging
 
-    global show_reboot_button = True
-    global reboot_flag = False
-    global exercise_completed = False
+    global show_reboot_button
+    global reboot_flag 
+    global exercise_completed
 
 
     global experiment_started #TODO whay its existe and wher we use it
