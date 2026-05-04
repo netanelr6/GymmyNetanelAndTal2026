@@ -12,8 +12,8 @@ class Screen(tk.Tk):
         tk.Tk.__init__(self, className='Poppy')
         self._frame = None
 
-        # self.switch_frame(SelectPage)
-        self.switch_frame(EyesPage) #--------------->maya original
+        self.switch_frame(SelectPage)
+        # self.switch_frame(EyesPage) #--------------->maya original
 
         self["bg"] = "#F3FCFB"
 
@@ -81,3 +81,43 @@ if __name__ == "__main__":
     s.screen = Screen()
     app = FullScreenApp(s.screen)
     s.screen.mainloop()
+
+
+
+
+#------N&T add screnn-----------------
+
+class SelectPage(tk.Frame):
+    def __init__(self, master):
+        tk.Frame.__init__(self, master, bg="#F3FCFB")
+        tk.Label(self, text="Researcher Control", font=("Helvetica", 24), bg="#F3FCFB").pack(pady=20)
+        
+        # Neutral buttons for the researcher
+        btn_style = {"font": ("Helvetica", 18), "width": 15, "pady": 10}
+        tk.Button(self, text="Mode A", command=lambda: self.set_mode(0), **btn_style).pack(pady=5)
+        tk.Button(self, text="Mode B", command=lambda: self.set_mode(1), **btn_style).pack(pady=5)
+        tk.Button(self, text="Mode C", command=lambda: self.set_mode(2), **btn_style).pack(pady=5)
+
+    def set_mode(self, mode):
+        # s.WORKFLOW_MODE = mode
+        # s.Team_Number = s.WORKFLOW_MODE
+        s.Team_Number = mode        
+        # Transition to the neutral "Waiting" page
+        self.master.switch_frame(WaitingPage)
+
+
+
+
+
+class WaitingPage(tk.Frame):
+    def __init__(self, master):
+        tk.Frame.__init__(self, master, bg="#F3FCFB")
+        tk.Label(self, text="System is ready", font=("Helvetica", 30), bg="#F3FCFB").pack(pady=100)
+        
+        # This is the button the experimenter presses when the participant is ready
+        tk.Button(self, text="START EXPERIMENT", font=("Helvetica", 24, "bold"), 
+                  bg="green", fg="white", command=self.go, padx=50, pady=20).pack()
+
+    def go(self):
+        s.experiment_started = True
+        self.master.switch_frame(EyesPage)
