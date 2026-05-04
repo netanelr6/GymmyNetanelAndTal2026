@@ -174,7 +174,7 @@ class Poppy(threading.Thread):
         if s.robot_count:
             say(str(counter + 1))
         time.sleep(1)
-        if counter >= s.rep-1 or s.success_exercise:  # TODO - Change to something that works if it finished before 8 repetitions.
+        if counter >= s.rep-1 or s.success_exercise or s.reboot_flag:  # TODO - Change to something that works if it finished before 8 repetitions.
             self.poppy.l_shoulder_y.goto_position(0, 2, wait=False)
             self.poppy.r_shoulder_y.goto_position(0, 2, wait=False)
             self.poppy.l_shoulder_x.goto_position(0, 2, wait=False)
@@ -226,7 +226,7 @@ class Poppy(threading.Thread):
         if s.robot_count and not s.inter_aff:
             say(str(counter + 1))
         time.sleep(1)
-        if counter >= s.rep-1 or s.success_exercise:  # TODO - Change to something that works if it finished before 8 repetitions.
+        if counter >= s.rep-1 or s.success_exercise or s.reboot_flag:  # TODO - Change to something that works if it finished before 8 repetitions.
             self.poppy.r_elbow_y.goto_position(90, 1.5, wait=False)
             if (s.Team_Number == 0 or s.Team_Number == 2) or not s.hardwere_aff:
                 self.poppy.l_elbow_y.goto_position(90, 1.5, wait=True)

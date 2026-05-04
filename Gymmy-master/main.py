@@ -93,9 +93,9 @@ if __name__ == '__main__':
     s.adaptive = False #True
     s.corrective_feedback = False
     s.one_hand = False
+    s.performance_class = {}
     if s.adaptive:
         s.adaptation_model_name = 'performance_evaluation_model'
-        s.performance_class = {}
         # s.adaptation_model = pickle.load(open(f'{adaptation_model_name}.sav', 'rb'))
 
 
