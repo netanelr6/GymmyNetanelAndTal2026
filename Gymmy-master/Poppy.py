@@ -86,11 +86,16 @@ class Poppy(threading.Thread):
 
     # EX2 - Bend Elbows
     def bend_elbows(self, counter):
-        self.poppy.r_arm[3].goto_position(-60, 1.5, wait=False)
-        self.poppy.l_arm[3].goto_position(-60, 1.5, wait=True)
+        
+        if (s.Team_Number == 0 or s.Team_Number == 2) or not s.hardwere_aff:
+            self.poppy.l_arm[3].goto_position(-60, 1.5, wait=False)
+        self.poppy.r_arm[3].goto_position(-60, 1.5, wait=True)
         time.sleep(1.5)
-        self.poppy.r_arm[3].goto_position(85, 1.5, wait=False)
-        self.poppy.l_arm[3].goto_position(85, 1.5, wait=True)
+
+        if (s.Team_Number == 0 or s.Team_Number == 2) or not s.hardwere_aff:
+            self.poppy.l_arm[3].goto_position(85, 1.5, wait=False)
+        self.poppy.r_arm[3].goto_position(85, 1.5, wait=True)
+        
         if s.robot_count:
             say(str(counter + 1))
         time.sleep(1.4)
@@ -205,24 +210,30 @@ class Poppy(threading.Thread):
     # EX5 - open and close arms 90
     def open_and_close_arms_90(self, counter):
         if counter == 0:
-            self.poppy.l_shoulder_y.goto_position(-90, 1.5, wait=False)
+            if (s.Team_Number == 0 or s.Team_Number == 2) or not s.hardwere_aff:
+                self.poppy.l_shoulder_y.goto_position(-90, 1.5, wait=False)
             self.poppy.r_shoulder_y.goto_position(-90, 1.5, wait=True)
-            self.poppy.l_elbow_y.goto_position(0, 1.5, wait=False)
+            if (s.Team_Number == 0 or s.Team_Number == 2) or not s.hardwere_aff:
+                self.poppy.l_elbow_y.goto_position(0, 1.5, wait=False)
             self.poppy.r_elbow_y.goto_position(0, 1.5, wait=True)
-        self.poppy.l_shoulder_x.goto_position(90, 1, wait=False)
+        if (s.Team_Number == 0 or s.Team_Number == 2) or not s.hardwere_aff:
+            self.poppy.l_shoulder_x.goto_position(90, 1, wait=False)
         self.poppy.r_shoulder_x.goto_position(-90, 1, wait=True)
         time.sleep(1.8)
-        self.poppy.l_shoulder_x.goto_position(0, 1, wait=False)
+        if (s.Team_Number == 0 or s.Team_Number == 2) or not s.hardwere_aff:
+            self.poppy.l_shoulder_x.goto_position(0, 1, wait=False)
         self.poppy.r_shoulder_x.goto_position(0, 1, wait=True)
         if s.robot_count:
             say(str(counter + 1))
         time.sleep(1)
         if counter >= s.rep-1 or s.success_exercise:  # TODO - Change to something that works if it finished before 8 repetitions.
             self.poppy.r_elbow_y.goto_position(90, 1.5, wait=False)
-            self.poppy.l_elbow_y.goto_position(90, 1.5, wait=True)
-            self.poppy.l_shoulder_y.goto_position(0, 1.5, wait=False)
+            if (s.Team_Number == 0 or s.Team_Number == 2) or not s.hardwere_aff:
+                self.poppy.l_elbow_y.goto_position(90, 1.5, wait=True)
+                self.poppy.l_shoulder_y.goto_position(0, 1.5, wait=False)
             self.poppy.r_shoulder_y.goto_position(0, 1.5, wait=True)
-            self.poppy.l_shoulder_x.goto_position(0, 1.5, wait=False)
+            if (s.Team_Number == 0 or s.Team_Number == 2) or not s.hardwere_aff:
+                self.poppy.l_shoulder_x.goto_position(0, 1.5, wait=False)
             self.poppy.r_shoulder_x.goto_position(0, 1.5, wait=False)
 
     # EX5 - open and close arms 90 - one hand
@@ -257,14 +268,18 @@ class Poppy(threading.Thread):
 
     # EX 6 raise_arms_forward
     def raise_arms_forward(self, counter):
-        self.poppy.l_shoulder_y.goto_position(-90, 1.5, wait=False)
+        if (s.Team_Number == 0 or s.Team_Number == 2) or not s.hardwere_aff:
+            self.poppy.l_shoulder_y.goto_position(-90, 1.5, wait=False)
         self.poppy.r_shoulder_y.goto_position(-90, 1.5, wait=False)
-        self.poppy.l_arm_z.goto_position(-90, 1.5, wait=False)
+        if (s.Team_Number == 0 or s.Team_Number == 2) or not s.hardwere_aff:
+            self.poppy.l_arm_z.goto_position(-90, 1.5, wait=False)
         self.poppy.r_arm_z.goto_position(90, 1.5, wait=False)
         time.sleep(1.8)
-        self.poppy.l_arm_z.goto_position(0, 1.5, wait=False)
+        if (s.Team_Number == 0 or s.Team_Number == 2) or not s.hardwere_aff:
+            self.poppy.l_arm_z.goto_position(0, 1.5, wait=False)
         self.poppy.r_arm_z.goto_position(0, 1.5, wait=False)
-        self.poppy.l_shoulder_y.goto_position(0, 1.5, wait=False)
+        if (s.Team_Number == 0 or s.Team_Number == 2) or not s.hardwere_aff:
+            self.poppy.l_shoulder_y.goto_position(0, 1.5, wait=False)
         self.poppy.r_shoulder_y.goto_position(0, 1.5, wait=True)
         if s.robot_count:
             say(str(counter + 1))
