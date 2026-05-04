@@ -123,14 +123,66 @@ class Training(threading.Thread):
     def training_session(self):
         print("Training: start exercises")
         # TODO - adding random choice of exercises.
-        exercise_names = ["raise_arms_horizontally", "bend_elbows", "raise_arms_bend_elbows", "open_and_close_arms",
-                          "open_and_close_arms_90", "raise_arms_forward"]
+        exercise_names = ["raise_arms_horizontally","raise_arms_bend_elbows", "bend_elbows", "open_and_close_arms",
+                          "open_and_close_arms_90", "raise_arms_forward"] #TODO our work list
+        #exercise_names = ["raise_arms_horizontally", "bend_elbows", "raise_arms_bend_elbows", "open_and_close_arms",
+        #                 "open_and_close_arms_90", "raise_arms_forward"] #maya origin
         for e in exercise_names:
-            time.sleep(2) # wait between exercises
-            self.run_exercise(e)
-            while (not s.poppy_done) or (not s.camera_done):
-                print("not done")
-                time.sleep(1)
+
+            if e == "bend_elbows" : #-------------------------->where we congig a failure
+                if s.Team_Number == 1:
+                    s.hardwere_aff = True
+                elif s.Team_Number == 2:
+                    s.inter_aff = True
+
+
+            #---------------------------------------
+
+            s.exercise_completed = False
+    
+            while not s.exercise_completed:
+                time.sleep(4) # wait between exercises  #---------->TODO Tuning slepp
+
+                s.reboot_flag = False
+                
+                self.run_exercise(e)
+
+                if s.reboot_flag:
+                    #say("New_Reboot")
+                
+                    if s.hardwere_aff:
+                        s.hardwere_aff = False
+                
+                    if s.inter_aff:
+                        s.inter_aff = False
+                
+                    s.reboot_flag = False
+
+                    while (not s.poppy_done) or (not s.camera_done):
+                        print("not done")
+                        time.sleep(1)
+                        
+                    print("TRAINING: Reboot detected, repeating exercise:", e)
+                    continue
+
+                s.exercise_completed = True
+
+
+            #-----------------------------------------
+            """"
+            ##old mya block
+
+            # time.sleep(2) # wait between exercises
+            # self.run_exercise(e)
+            # while (not s.poppy_done) or (not s.camera_done):
+            #     print("not done")
+            #     time.sleep(1)
+            
+            """
+            #-----------------------------------------
+            
+
+
 
     def finish_workout(self):
         say('goodbye')
