@@ -2,12 +2,24 @@ import xlsxwriter
 import datetime
 import Settings as s
 from Joint import Joint
+import os
 
 
 def create_workbook():
     current_time = datetime.datetime.now()
     workbook_name = s.participant_code + ".xlsx"
-    s.excel_workbook = xlsxwriter.Workbook(workbook_name)
+
+    #-----netanel edit from MAYA origin ----------
+    if hasattr(s, 'output_path'):
+        full_path = os.path.join(s.output_path, workbook_name)
+    else:
+        full_path = workbook_name
+    
+    #save the EXCEL file in the pathe location
+    s.excel_workbook = xlsxwriter.Workbook(full_path)
+    # s.excel_workbook = xlsxwriter.Workbook(workbook_name) #maya original line
+
+    # -------------------------------------------
 
 
 def wf_joints(ex_name, list_joints):

@@ -14,9 +14,12 @@ class Screen(tk.Tk):
 
         self.attributes('-fullscreen', True)  # Set the window to fullscreen-------------------->N&T change
 
-
-        self.switch_frame(SelectPage)
-        # self.switch_frame(EyesPage) #--------------->maya original
+        if s.experiment_is_waiting_to_start == False:
+            self.switch_frame(SelectPage)
+        else:
+            s.Team_Number = s.WORKFLOW_MODE
+            self.switch_frame(EyesPage)
+            # self.switch_frame(EyesPage) #--------------->maya original
 
         self["bg"] = "#F3FCFB"
 
@@ -104,9 +107,13 @@ class SelectPage(tk.Frame):
     def set_mode(self, mode):
         # s.WORKFLOW_MODE = mode
         # s.Team_Number = s.WORKFLOW_MODE
-        s.Team_Number = mode        
+        s.Team_Number = mode 
+        s.WORKFLOW_MODE = mode     
         # Transition to the neutral "Waiting" page
-        self.master.switch_frame(WaitingPage)
+        if s.experiment_started == False:
+            self.master.switch_frame(WaitingPage)
+        else:
+            self.master.switch_frame(EyesPage)
 
 
 

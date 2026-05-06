@@ -9,18 +9,43 @@ from Screen import Screen, FullScreenApp
 from PIL import Image, ImageTk
 import pickle
 import datetime
+import os
+import sys
 
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 # TODO add more exercises
-# TODO adaptive framework
 # TODO GUI
 # delay between exercises
 
 
 if __name__ == '__main__':
+
+
+    #-----------------------participant settinga -----------------------
+    participant_number = 42 #exp: 42
+    participant_round = 'A' #exp: 'A'  --->'A'= firs week, 'B'= second week
+    participant_numberANDround = participant_number + participant_round   #TODO always set who is partificate(impurtent for file name)
+    #numberANDround  --->  example: {participant number = '42'}{round(WEEK) = 'A'} = '42A'
+
+    s.WORKFLOW_MODE = None        # 0=Normal, 1=Hardware, 2=Interactio ,None = select page #TODO --> update the value----->If you don't want a selection screen
+
+
+    s.experiment_is_waiting_to_start = False #true =we after prase the "tham letter" button
+    s.experiment_started = False #true =we after prase the "start expirement" button    
+
+
+    if s.WORKFLOW_MODE != None:
+        s.experiment_is_waiting_to_start = True
+
+
+    print (participant_numberANDround)
+    #--------------------------------------------------------------------
+
+
+
 
     #-------------------------------------------------
     #NETANEL&tal SETTINGS
@@ -30,14 +55,13 @@ if __name__ == '__main__':
     s.output_path = ""    # bild in main
     s.save_outputs = True  # Set to False to disable folder creation, Excel saving, and logging
 
+
+
     s.reboot_flag = False
     s.exercise_completed = False
 
-    s.experiment_started = False #TODO whay its existe and wher we use it
 
 
-
-    s.WORKFLOW_MODE = 3        # 1=Normal, 2=Hardware, 3=Interactio #TODO --> update the value----->עדיין רלוונטי???
 
     s.inter_aff = False
     s.hardwere_aff = False
@@ -64,8 +88,7 @@ if __name__ == '__main__':
     s.picture_path = 'audio files/' + language + '/' + gender + '/'
     # s.str_to_say = ""
     current_time = datetime.datetime.now()
-    s.participant_code = str(current_time.day) + "." + str(current_time.month) + " " + str(current_time.hour) + "." + \
-                         str(current_time.minute) + "." + str(current_time.second)
+
 
     # Training variables initialization
     s.exercise_amount = 6
@@ -80,8 +103,8 @@ if __name__ == '__main__':
     s.camera_done = False
     s.robot_count = False #True
     s.try_again = False
-    # Excel variable
-    Excel.create_workbook()
+    # # Excel variable ##move after we select the grop in screen
+    # Excel.create_workbook()
     s.ex_list = []
 
     # Create all components
@@ -101,7 +124,67 @@ if __name__ == '__main__':
 
     s.screen = Screen()
     #---------------------------------------
+
     print("Waiting for researcher selection on screen...")
+    while not s.experiment_is_waiting_to_start:
+        try:
+            s.screen.update_idletasks()
+            s.screen.update()
+            time.sleep(0.01)
+
+
+        except Exception as e:
+            print(f"GUI Interaction Error: {e}")
+            break
+
+    #------------File system go up -----------------------
+    MOD_code = getattr(s, 'WORKFLOW_MODE', None)
+    if not MOD_code:
+        s.WORKFLOW_MOD = "INVALID_MODE_CODE"
+
+    s.participant_code = participant_numberANDround + "_"+ "Mode" + s.WORKFLOW_MODE + "_"+ str(current_time.day) + "." + str(current_time.month) + " " + str(current_time.hour) + "." + \
+                         str(current_time.minute) + "." + str(current_time.second) 
+
+    if s.save_outputs:
+        s.output_path = os.path.join("DATS", s.project_folder, s.participant_code)
+        os.makedirs(s.output_path, exist_ok=True)
+
+        # Initialize logging
+        log_file_path = os.path.join(s.output_path, "code_output.txt")
+        log_file = open(log_file_path, "w", encoding="utf-8")
+
+        class Logger(object):
+            def __init__(self, terminal, logfile):
+                self.terminal = terminal
+                self.logfile = logfile
+
+            def write(self, message):
+                self.terminal.write(message)
+                self.logfile.write(message)
+                self.logfile.flush()
+
+            def flush(self):
+                pass
+
+        sys.stdout = Logger(sys.stdout, log_file)
+        sys.stderr = Logger(sys.stderr, log_file)
+
+
+
+        # Excel variable 
+        Excel.create_workbook()
+        # s.ex_list = []
+
+
+        print(f"--- Session Initialized. Saving to: {s.output_path} ---")
+    else:
+        print("--- Debug Mode: Outputs and Logging are DISABLED ---")
+
+    #------------------------------------------------------
+
+
+
+    print("Waiting for researcher whitin to start experiment screen...")
     while not s.experiment_started:
         try:
             s.screen.update_idletasks()
@@ -115,13 +198,29 @@ if __name__ == '__main__':
     #---------------------------------------
 
 
+    try:
+        # Start all threads
+        s.camera.start()
+        s.training.start()
+        s.robot.start()
+        image1 = Image.open('Pictures//icon.jpg')
+        s.screen.tk.call('wm', 'iconphoto', s.screen._w, ImageTk.PhotoImage(image1))
+        app = FullScreenApp(s.screen)
+        s.screen.mainloop()
+        print("ALL SYSTEMS GO. Workout session in progress.")
 
-    # Start all threads
-    s.camera.start()
-    s.training.start()
-    s.robot.start()
-    image1 = Image.open('Pictures//icon.jpg')
-    s.screen.tk.call('wm', 'iconphoto', s.screen._w, ImageTk.PhotoImage(image1))
-    app = FullScreenApp(s.screen)
-    s.screen.mainloop()
+
+    except Exception as e:
+        print(f"!!! CRITICAL RUNTIME ERROR: {e}")
+        
+    finally:
+        # Finalize and close resources only if they were initialized
+        if s.save_outputs:
+            Excel.close_workbook()
+            if log_file:
+                log_file.close()
+            print("--- Data securely saved. ---")
+        print("--- System shutdown complete. ---")
+    # ==========================================================
+
 
