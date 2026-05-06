@@ -13,7 +13,7 @@ def __init__():
     global experiment_is_waiting_to_start #true =we after prase the "tham letter" button
     global experiment_started #true =we after prase the "start expirement" button    
     #TO MAIN--> global experiment_started = False
-tr
+
     
     global WORKFLOW_MODE
     #to main global WORKFLOW_MODE = 1        # 1=Normal, 2=Hardware, 3=Interactio

@@ -27,7 +27,7 @@ if __name__ == '__main__':
     #-----------------------participant settinga -----------------------
     participant_number = 42 #exp: 42
     participant_round = 'A' #exp: 'A'  --->'A'= firs week, 'B'= second week
-    participant_numberANDround = participant_number + participant_round   #TODO always set who is partificate(impurtent for file name)
+    participant_numberANDround = f"{participant_number}{participant_round}"   #TODO always set who is partificate(impurtent for file name)
     #numberANDround  --->  example: {participant number = '42'}{round(WEEK) = 'A'} = '42A'
 
     s.WORKFLOW_MODE = None        # 0=Normal, 1=Hardware, 2=Interactio ,None = select page #TODO --> update the value----->If you don't want a selection screen
@@ -142,7 +142,7 @@ if __name__ == '__main__':
     if not MOD_code:
         s.WORKFLOW_MOD = "INVALID_MODE_CODE"
 
-    s.participant_code = participant_numberANDround + "_"+ "Mode" + s.WORKFLOW_MODE + "_"+ str(current_time.day) + "." + str(current_time.month) + " " + str(current_time.hour) + "." + \
+    s.participant_code = participant_numberANDround + "_"+ "Mode" + f"{s.WORKFLOW_MODE}" + "_"+ str(current_time.day) + "." + str(current_time.month) + " " + str(current_time.hour) + "." + \
                          str(current_time.minute) + "." + str(current_time.second) 
 
     if s.save_outputs:

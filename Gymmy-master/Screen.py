@@ -109,6 +109,7 @@ class SelectPage(tk.Frame):
         # s.Team_Number = s.WORKFLOW_MODE
         s.Team_Number = mode 
         s.WORKFLOW_MODE = mode     
+        s.experiment_is_waiting_to_start = True
         # Transition to the neutral "Waiting" page
         if s.experiment_started == False:
             self.master.switch_frame(WaitingPage)
