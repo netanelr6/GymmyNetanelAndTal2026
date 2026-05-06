@@ -16,10 +16,11 @@ class Screen(tk.Tk):
 
         if s.experiment_is_waiting_to_start == False:
             self.switch_frame(SelectPage)
-        else:
+        elif s.experiment_started == False:
             s.Team_Number = s.WORKFLOW_MODE
-            self.switch_frame(EyesPage)
-            # self.switch_frame(EyesPage) #--------------->maya original
+            self.switch_frame(WaitingPage)
+        else:
+            self.switch_frame(EyesPage) #--------------->maya original
 
         self["bg"] = "#F3FCFB"
 

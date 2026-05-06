@@ -141,6 +141,7 @@ if __name__ == '__main__':
     MOD_code = getattr(s, 'WORKFLOW_MODE', None)
     if not MOD_code:
         s.WORKFLOW_MOD = "INVALID_MODE_CODE"
+    print(f"WORKFLOW_MODE = {s.WORKFLOW_MODE} || Team_Number = {s.Team_Number} " )
 
     s.participant_code = participant_numberANDround + "_"+ "Mode" + f"{s.WORKFLOW_MODE}" + "_"+ str(current_time.day) + "." + str(current_time.month) + " " + str(current_time.hour) + "." + \
                          str(current_time.minute) + "." + str(current_time.second) 
