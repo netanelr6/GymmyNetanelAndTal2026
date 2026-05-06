@@ -7,6 +7,7 @@ from scipy.signal import butter, filtfilt, argrelextrema
 import matplotlib.pyplot as plt
 import Settings as s
 import datetime
+import os
 
 
 def repetition_features(data, hand, framepersec):
@@ -249,7 +250,15 @@ def plot_data(exercise_name, right_hand_data, left_hand_data):
     plt.xlabel("Frame")
     plt.ylabel("Angle Degree")
     current_time = datetime.datetime.now()
-    plt.savefig(s.participant_code+exercise_name+str(current_time.minute) + str(current_time.second)+'.png')
+
+    file_name = f"{s.participant_code}{exercise_name}{str(current_time.minute)}{str(current_time.second)}.png"
+    full_path = os.path.join(s.output_path, file_name)
+    
+    plt.savefig(full_path)
+    plt.close()
+
+    #old maya code
+    # plt.savefig(s.participant_code+exercise_name+str(current_time.minute) + str(current_time.second)+'.png')
     # plt.show()
 
 

@@ -16,6 +16,7 @@ import Excel
 from Audio import say
 from performance_classification import feature_extraction, predict_performance, plot_data
 
+s.adaptation_model_name = 'model2'
 
 class Camera(threading.Thread):
 
