@@ -132,13 +132,9 @@ class Training(threading.Thread):
             if e == "bend_elbows" : #-------------------------->where we congig a failure
                 if s.Team_Number == 1:
                     s.hardwere_aff = True
-                    s.fault_start_time = time.time()
-                    s.fault_exercise = e
                 elif s.Team_Number == 2:
                     s.inter_aff = True
                     s.robot_count = True
-                    s.fault_start_time = time.time()
-                    s.fault_exercise = e
 
 
 
@@ -154,14 +150,6 @@ class Training(threading.Thread):
                 self.run_exercise(e)
 
                 if s.reboot_flag:
-                    if s.fault_start_time > 0:
-                        # The user pressed reboot and the timer was running
-                        s.reaction_time = time.time() - s.fault_start_time
-                        s.fault_handled = True
-                        s.fault_handled_exercise = e
-                        s.fault_start_time = 0.0 # Stop the timer
-                        print(f"TRAINING: Fault handled during exercise: '{s.fault_handled_exercise}' | Reaction time: {s.reaction_time:.2f} sec")
-
                     #say("New_Reboot")
                 
                     if s.hardwere_aff:

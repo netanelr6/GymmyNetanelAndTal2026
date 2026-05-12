@@ -69,12 +69,6 @@ if __name__ == '__main__':
     # print(f"Team_Number is: {s.Team_Number}")
     s.reboot_flag = False
 
-    s.fault_start_time = 0.0
-    s.reaction_time = 0.0
-    s.fault_handled = False
-    s.fault_exercise = ""
-    s.fault_handled_exercise = ""
-
     # RUN_MODE = os.getenv('GYMMY_MODE', 'SIM') #TODO MYBE FOr LATER
 
 
@@ -229,3 +223,5 @@ if __name__ == '__main__':
             print("--- Data securely saved. ---")
         print("--- System shutdown complete. ---")
     # ==========================================================
+
+
