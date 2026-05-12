@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 :: --- CONFIGURATION ---
 set "GITHUB_USER=netanelr6"
-set "GITHUB_TOKEN=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"
+set "GITHUB_TOKEN=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"
 set "REPO_PATH=github.com/netanelr6/GymmyNetanelAndTal2026.git"
 :: ---------------------
 

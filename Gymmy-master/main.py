@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
 
     #-----------------------participant settinga -----------------------
-    participant_number = 42 #exp: 42
+    participant_number = 53 #exp: 42
     participant_round = 'A' #exp: 'A'  --->'A'= firs week, 'B'= second week
     participant_numberANDround = f"{participant_number}{participant_round}"   #TODO always set who is partificate(impurtent for file name)
     #numberANDround  --->  example: {participant number = '42'}{round(WEEK) = 'A'} = '42A'
