@@ -1,0 +1,25 @@
+@echo off
+setlocal enabledelayedexpansion
+
+:: Change directory to the folder where the script is located
+cd /d "%~dp0"
+
+echo Starting update from remote repository...
+
+:: 1. Fetch the latest information from the server without merging yet
+echo Fetching latest data from GitHub...
+git fetch origin main
+
+:: 2. Update all files and folders EXCEPT the 'dats' folder
+:: The ":!dats" syntax tells Git to exclude this specific path from the checkout
+echo Updating local files (excluding 'dats' folder)...
+git checkout origin/main -- . ":(exclude)dats"
+
+:: 3. Optional: Sync the local branch pointer to match the remote
+:: This ensures your local 'main' is officially at the same point as 'origin/main'
+git merge origin/main --allow-unrelated-histories -X ours --no-commit
+
+echo.
+echo Update complete! 
+echo All code updated, 'dats' folder remains untouched.
+pause
