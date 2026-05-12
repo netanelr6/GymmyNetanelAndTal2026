@@ -24,6 +24,12 @@ def __init__():
     global Team_Number
     global reboot_flag
     # TODO ADD TO MAIN--->  reboot_flag = False
+    
+    global fault_start_time
+    global reaction_time
+    global fault_handled
+    global fault_exercise
+    global fault_handled_exercise
 
 
     global RUN_MODE

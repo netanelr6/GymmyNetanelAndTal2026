@@ -1,0 +1,212 @@
+--- Session Initialized. Saving to: DATS\netanel&tal_2026A_\42A_Mode1_11.5 16.31.11 ---
+Waiting for researcher whitin to start experiment screen...
+CAMERA START
+MP INITIALIZATIONTRAINING START
+
+ROBOT STARTTRAINING: Exercise MP START
+ 
+hello_waving  start
+Didn't receive data! [Timeout]
+CAMERA: Exercise  hello_waving  start
+ROBOT: Exercise  hello_waving  start
+ROBOT: Exercise  hello_waving  done
+Camera: Wave for start
+CAMERA: Exercise    done
+TRAINING: Exercise  hello_waving  done
+Training: start waving
+Training: Calibration
+CAMERA: init position - please stand in front of the camera with hands to the sides
+nose 310.41385650634766 -234.8633623123169 -6.656492501497269
+L_eye_inner 314.6317481994629 -228.3665370941162 -9.323157370090485
+L_eye 317.2706985473633 -228.14762592315674 -9.328292310237885
+L_eye_outer 320.21522521972656 -228.01188468933105 -9.318964183330536
+R_eye_inner 306.90378189086914 -229.36749458312988 -10.029639303684235
+R_eye 304.89742279052734 -229.79554653167725 -10.019879043102264
+R_eye_outer 303.22383880615234 -230.29961585998535 -10.0297249853611
+L_ear 325.83404541015625 -229.83943462371826 -22.68485575914383
+R_ear 302.96573638916016 -232.7980899810791 -26.015818119049072
+L_mouth 316.7758560180664 -241.0239315032959 -11.441262066364288
+R_mouth 307.98099517822266 -242.07621574401855 -12.377510964870453
+L_Shoulder 354.07459259033203 -264.638671875 -25.345700979232788
+R_Shoulder 283.7066078186035 -260.84741592407227 -33.560994267463684
+L_Elbow 405.32691955566406 -276.52130126953125 -15.273180603981018
+R_Elbow 232.9487419128418 -262.51519203186035 -23.156313598155975
+L_Wrist 452.92274475097656 -272.7975082397461 -1.1582138016819954
+R_Wrist 181.96659088134766 -242.97938346862793 -2.710048481822014
+L_pinky 467.51792907714844 -278.0369281768799 0.8670269511640072
+R_pinky 163.86869430541992 -240.1889705657959 -0.30352442990988493
+L_index 467.0520782470703 -278.11755180358887 4.346443712711334
+R_index 164.23654556274414 -238.25533390045166 2.3410188034176826
+L_thumb 462.3994445800781 -276.9232177734375 0.769565999507904
+R_thumb 170.1436996459961 -239.96277809143066 -0.911448709666729
+L_Hip 346.2144470214844 -354.5567321777344 3.701881319284439
+R_Hip 297.0281982421875 -354.1284370422363 -3.753460943698883
+CAMERA: init position verified
+Training: finish waving
+Training: start exercises
+TRAINING: Exercise  raise_arms_horizontally  start
+CAMERA: Exercise  raise_arms_horizontally  start
+ROBOT: Exercise  raise_arms_horizontally  start
+1
+2
+ROBOT: Exercise  raise_arms_horizontally  done
+TRAINING: Exercise  raise_arms_horizontally  done
+RIGHT CLICK REBOOT TRIGGERED
+not done
+0    0.999748
+1    0.999965
+dtype: float64
+CAMERA: performance classification {'raise_arms_horizontally': {'right': 0.9999653472527383, 'left': 0.9997475530505784}}
+RIGHT CLICK REBOOT TRIGGERED
+C:\Users\Administrator\Documents\NetanelAndTal\N&T2026\GymmyNetanelAndTal2026\Gymmy-master\performance_classification.py:246: UserWarning: Starting a Matplotlib GUI outside of the main thread will likely fail.
+  plt.figure()
+not done
+CAMERA: Exercise    done
+TRAINING: Reboot detected, repeating exercise: raise_arms_horizontally
+TRAINING: Exercise  raise_arms_horizontally  start
+CAMERA: Exercise  raise_arms_horizontally  start
+ROBOT: Exercise  raise_arms_horizontally  start
+1
+ROBOT: Exercise  raise_arms_horizontally  done
+TRAINING: Exercise  raise_arms_horizontally  done
+CAMERA: Exercise    done
+RIGHT CLICK REBOOT TRIGGERED
+TRAINING: Exercise  raise_arms_bend_elbows  start
+CAMERA: Exercise  raise_arms_bend_elbows  start
+ROBOT: Exercise  raise_arms_bend_elbows  start
+1
+2
+3
+4
+5
+6
+7
+8
+0    1.0
+1    1.0
+dtype: float64
+CAMERA: performance classification {'raise_arms_horizontally': {'right': 1, 'left': 1}, 'raise_arms_bend_elbows': {'right': 0.9999999946084739, 'left': 0.999999984688086}}
+C:\Users\Administrator\Documents\NetanelAndTal\N&T2026\GymmyNetanelAndTal2026\Gymmy-master\performance_classification.py:246: UserWarning: Starting a Matplotlib GUI outside of the main thread will likely fail.
+  plt.figure()
+CAMERA: Exercise    done
+RIGHT CLICK REBOOT TRIGGERED
+TRAINING: Exercise  raise_arms_bend_elbows  done
+TRAINING: Reboot detected, repeating exercise: raise_arms_bend_elbows
+RIGHT CLICK REBOOT TRIGGERED
+ROBOT: Exercise    done
+RIGHT CLICK REBOOT TRIGGERED
+RIGHT CLICK REBOOT TRIGGERED
+TRAINING: Exercise  raise_arms_bend_elbows  start
+CAMERA: Exercise  raise_arms_bend_elbows  start
+ROBOT: Exercise  raise_arms_bend_elbows  start
+1
+2
+3
+4
+5
+6
+7
+8
+0    1.000000
+1    0.999997
+dtype: float64
+CAMERA: performance classification {'raise_arms_horizontally': {'right': 1, 'left': 1}, 'raise_arms_bend_elbows': {'right': 0.9999999946084739, 'left': 0.999999984688086}, 'raise_arms_bend_elbows3444': {'right': 0.9999970664420124, 'left': 0.9999996402543168}}
+C:\Users\Administrator\Documents\NetanelAndTal\N&T2026\GymmyNetanelAndTal2026\Gymmy-master\performance_classification.py:246: UserWarning: Starting a Matplotlib GUI outside of the main thread will likely fail.
+  plt.figure()
+CAMERA: Exercise    done
+TRAINING: Exercise  raise_arms_bend_elbows  done
+ROBOT: Exercise    done
+RIGHT CLICK REBOOT TRIGGERED
+TRAINING: Exercise  open_and_close_arms  start
+CAMERA: Exercise  open_and_close_arms  start
+ROBOT: Exercise  open_and_close_arms  start
+1
+2
+3
+4
+5
+6
+7
+RIGHT CLICK REBOOT TRIGGERED
+ROBOT: Exercise  open_and_close_arms  done
+TRAINING: Exercise  open_and_close_arms  done
+0    1.0
+1    1.0
+dtype: float64
+CAMERA: performance classification {'raise_arms_horizontally': {'right': 1, 'left': 1}, 'raise_arms_bend_elbows': {'right': 0.9999999946084739, 'left': 0.999999984688086}, 'raise_arms_bend_elbows3444': {'right': 0.9999970664420124, 'left': 0.9999996402543168}, 'open_and_close_arms': {'right': 0.9999999999097133, 'left': 0.9999999994029143}}
+C:\Users\Administrator\Documents\NetanelAndTal\N&T2026\GymmyNetanelAndTal2026\Gymmy-master\performance_classification.py:246: UserWarning: Starting a Matplotlib GUI outside of the main thread will likely fail.
+  plt.figure()
+CAMERA: Exercise    done
+TRAINING: Reboot detected, repeating exercise: open_and_close_arms
+TRAINING: Exercise  open_and_close_arms  start
+CAMERA: Exercise  open_and_close_arms  start
+ROBOT: Exercise  open_and_close_arms  start
+1
+2
+3
+4
+5
+6
+7
+8
+0    1.0
+1    1.0
+dtype: float64
+CAMERA: performance classification {'raise_arms_horizontally': {'right': 1, 'left': 1}, 'raise_arms_bend_elbows': {'right': 0.9999999946084739, 'left': 0.999999984688086}, 'raise_arms_bend_elbows3444': {'right': 0.9999970664420124, 'left': 0.9999996402543168}, 'open_and_close_arms': {'right': 0.9999999999097133, 'left': 0.9999999994029143}, 'open_and_close_arms3618': {'right': 0.9999999995060367, 'left': 0.9999999911341054}}
+C:\Users\Administrator\Documents\NetanelAndTal\N&T2026\GymmyNetanelAndTal2026\Gymmy-master\performance_classification.py:246: UserWarning: Starting a Matplotlib GUI outside of the main thread will likely fail.
+  plt.figure()
+CAMERA: Exercise    done
+TRAINING: Exercise  open_and_close_arms  done
+ROBOT: Exercise    done
+TRAINING: Exercise  bend_elbows  start
+RIGHT CLICK REBOOT TRIGGERED
+CAMERA: Exercise  bend_elbows  start
+ROBOT: Exercise  bend_elbows  start
+ROBOT: Exercise  bend_elbows  done
+TRAINING: Exercise  bend_elbows  done
+CAMERA: Exercise    done
+TRAINING: Reboot detected, repeating exercise: bend_elbows
+TRAINING: Exercise  bend_elbows  start
+CAMERA: Exercise  bend_elbows  start
+ROBOT: Exercise  bend_elbows  start
+ROBOT: Exercise  bend_elbows  done
+TRAINING: Exercise  bend_elbows  done
+CAMERA: Exercise    done
+RIGHT CLICK REBOOT TRIGGERED
+TRAINING: Exercise  raise_arms_forward  start
+CAMERA: Exercise  raise_arms_forward  start
+ROBOT: Exercise  raise_arms_forward  start
+ROBOT: Exercise  raise_arms_forward  done
+TRAINING: Exercise  raise_arms_forward  done
+CAMERA: Exercise    done
+TRAINING: Exercise  open_and_close_arms_90  start
+RIGHT CLICK REBOOT TRIGGERED
+CAMERA: Exercise  open_and_close_arms_90  start
+ROBOT: Exercise  open_and_close_arms_90  start
+ROBOT: Exercise  open_and_close_arms_90  done
+TRAINING: Exercise  open_and_close_arms_90  done
+CAMERA: Exercise    done
+TRAINING: Reboot detected, repeating exercise: open_and_close_arms_90
+TRAINING: Exercise  open_and_close_arms_90  start
+CAMERA: Exercise  open_and_close_arms_90  start
+ROBOT: Exercise  open_and_close_arms_90  start
+RIGHT CLICK REBOOT TRIGGERED
+ROBOT: Exercise  open_and_close_arms_90  done
+TRAINING: Exercise  open_and_close_arms_90  done
+CAMERA: Exercise    done
+TRAINING: Reboot detected, repeating exercise: open_and_close_arms_90
+TRAINING: Exercise  open_and_close_arms_90  start
+CAMERA: Exercise  open_and_close_arms_90  start
+ROBOT: Exercise  open_and_close_arms_90  start
+ROBOT: Exercise  open_and_close_arms_90  done
+TRAINING: Exercise  open_and_close_arms_90  done
+CAMERA: Exercise    done
+RIGHT CLICK REBOOT TRIGGERED
+RIGHT CLICK REBOOT TRIGGERED
+Robot Done
+Camera Done
+RIGHT CLICK REBOOT TRIGGERED
+TRAINING DONE
+ALL SYSTEMS GO. Workout session in progress.
+C:\ProgramData\Anaconda3\envs\poppyCode\lib\site-packages\xlsxwriter\workbook.py:339: UserWarning: Calling close() on already closed file.
+  warn("Calling close() on already closed file.")

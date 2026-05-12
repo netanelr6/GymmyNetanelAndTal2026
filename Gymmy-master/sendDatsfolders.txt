@@ -1,0 +1,32 @@
+@echo off
+setlocal enabledelayedexpansion
+
+:: Change directory to the folder where the script is located
+cd /d "%~dp0"
+
+:: Fetch real-time from an external API to bypass potential system clock errors
+echo Fetching synchronized time from network...
+for /f "usebackq tokens=*" %%a in (`powershell -command "(Invoke-RestMethod -Uri 'http://worldtimeapi.org/api/ip').datetime"`) do (
+    set "RAW_TIME=%%a"
+)
+
+:: Format the date and time string (Extracting YYYY-MM-DD and HH:mm:ss)
+:: Original format: 2026-05-12T16:37:25.123456+03:00
+set "SYNC_DATE=!RAW_TIME:~0,10!"
+set "SYNC_HOUR=!RAW_TIME:~11,8!"
+set "FINAL_TIME=!SYNC_DATE! !SYNC_HOUR!"
+
+echo Current session time: !FINAL_TIME!
+
+:: Stage changes only from the 'dats' directory
+git add dats/*
+
+:: Commit with the requested English message including the synced timestamp
+git commit -m "from Gymmy: Experimental data sync, from !FINAL_TIME!"
+
+:: Push the update to the remote repository
+git push origin main
+
+echo.
+echo Sync for 'dats' folder completed successfully at !FINAL_TIME!
+pause
