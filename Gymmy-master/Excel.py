@@ -75,5 +75,23 @@ def success_worksheet():
         row += 1
         col = 0
 
+    s.worksheet = s.excel_workbook.add_worksheet("Experiment_Results")
+    s.worksheet.write(0, 0, "Exercise")
+    s.worksheet.write(0, 1, "Handled")
+    s.worksheet.write(0, 2, "Handled In Exercise")
+    s.worksheet.write(0, 3, "Reaction Time (Sec)")
+    
+    fault_ex = getattr(s, 'fault_exercise', '')
+    if fault_ex == "":
+        s.worksheet.write(1, 0, "Ideal Mode - No Faults")
+        s.worksheet.write(1, 1, "N/A")
+        s.worksheet.write(1, 2, "N/A")
+        s.worksheet.write(1, 3, "N/A")
+    else:
+        s.worksheet.write(1, 0, fault_ex)
+        s.worksheet.write(1, 1, str(getattr(s, 'fault_handled', False)))
+        s.worksheet.write(1, 2, getattr(s, 'fault_handled_exercise', ''))
+        s.worksheet.write(1, 3, round(getattr(s, 'reaction_time', 0.0), 2))
+
 def close_workbook():
     s.excel_workbook.close()
