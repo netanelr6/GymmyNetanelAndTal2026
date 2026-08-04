@@ -1,0 +1,358 @@
+{
+  "sample": {
+    "recruited": 44,
+    "excluded": 4,
+    "excluded_ids": [
+      14,
+      32,
+      33,
+      36
+    ],
+    "final_n": 40,
+    "age_min": 70.0,
+    "age_max": 96.0,
+    "age_mean": 80.425,
+    "age_sd": 6.275256660396143,
+    "age_75_plus": 33,
+    "women": 26,
+    "men": 14,
+    "physically_active": 38,
+    "no_previous_robot_experience": 33
+  },
+  "pre_statistics": [
+    {
+      "Measure": "NARS S1",
+      "Mean": 2.7125,
+      "SD": 0.6537068311426928,
+      "N": 40
+    },
+    {
+      "Measure": "NARS S2",
+      "Mean": 3.325,
+      "SD": 0.9562733340727899,
+      "N": 40
+    },
+    {
+      "Measure": "NARS S3",
+      "Mean": 3.225,
+      "SD": 0.8911962574151493,
+      "N": 40
+    },
+    {
+      "Measure": "TAP Optimism",
+      "Mean": 3.5083333333333337,
+      "SD": 0.9841695705465312,
+      "N": 40
+    },
+    {
+      "Measure": "TAP Proficiency",
+      "Mean": 3.0,
+      "SD": 1.0127393670836666,
+      "N": 40
+    },
+    {
+      "Measure": "TAP Dependence",
+      "Mean": 2.7,
+      "SD": 1.4884168150705015,
+      "N": 40
+    }
+  ],
+  "paired_tests": [
+    {
+      "Measure": "Overall acceptance",
+      "N": 40,
+      "Control M": 5.311249999999999,
+      "Control SD": 0.9542994812950493,
+      "Failure M": 4.969375,
+      "Failure SD": 0.9878060625991786,
+      "Mean change": -0.34187499999999993,
+      "95% CI lower": -0.5774504492893803,
+      "95% CI upper": -0.10629955071061958,
+      "t": -2.9353969625167573,
+      "df": 39,
+      "p": 0.005560051432186491,
+      "Cohen dz": 0.46412701191464295,
+      "Difference-score Shapiro W": 0.977622710104062,
+      "Difference-score Shapiro p": 0.6018839460329439
+    },
+    {
+      "Measure": "Perceived usefulness",
+      "N": 40,
+      "Control M": 5.1625,
+      "Control SD": 1.379276566230952,
+      "Failure M": 4.7625,
+      "Failure SD": 1.5647867881304764,
+      "Mean change": -0.4,
+      "95% CI lower": -0.8833993674062866,
+      "95% CI upper": 0.0833993674062865,
+      "t": -1.673722438562261,
+      "df": 39,
+      "p": 0.10218847750122045,
+      "Cohen dz": 0.26463875383939905,
+      "Difference-score Shapiro W": 0.9486203642157217,
+      "Difference-score Shapiro p": 0.06798461307214577
+    },
+    {
+      "Measure": "Ease of use",
+      "N": 40,
+      "Control M": 6.05,
+      "Control SD": 0.597001052268969,
+      "Failure M": 5.6625,
+      "Failure SD": 0.6663861589352774,
+      "Mean change": -0.3875,
+      "95% CI lower": -0.5367509014103375,
+      "95% CI upper": -0.23824909858966248,
+      "t": -5.251510872683796,
+      "df": 39,
+      "p": 5.64748216704776e-06,
+      "Cohen dz": 0.8303367757409658,
+      "Difference-score Shapiro W": 0.9696120795607059,
+      "Difference-score Shapiro p": 0.34984912839239435
+    },
+    {
+      "Measure": "Attitude",
+      "N": 40,
+      "Control M": 5.407500000000001,
+      "Control SD": 0.7750558292546018,
+      "Failure M": 5.24,
+      "Failure SD": 0.9513283560504443,
+      "Mean change": -0.16750000000000007,
+      "95% CI lower": -0.3990741022430984,
+      "95% CI upper": 0.06407410224309829,
+      "t": -1.4630337581984727,
+      "df": 39,
+      "p": 0.15147133312781794,
+      "Cohen dz": 0.23132594848116084,
+      "Difference-score Shapiro W": 0.9870353673332205,
+      "Difference-score Shapiro p": 0.9202674403930755
+    },
+    {
+      "Measure": "Intention to use",
+      "N": 40,
+      "Control M": 4.625,
+      "Control SD": 1.7641370375284022,
+      "Failure M": 4.2125,
+      "Failure SD": 1.6088198413903534,
+      "Mean change": -0.4125,
+      "95% CI lower": -0.8407936961414697,
+      "95% CI upper": 0.015793696141469693,
+      "t": -1.9481024634076483,
+      "df": 39,
+      "p": 0.05862547345313618,
+      "Cohen dz": 0.3080220449876497,
+      "Difference-score Shapiro W": 0.9744102417628793,
+      "Difference-score Shapiro p": 0.490396674649726
+    }
+  ],
+  "detection_tests": [
+    {
+      "Comparison": "Failure type",
+      "Detected counts": "Hardware: 14/20; Interaction: 5/20",
+      "Not detected counts": "Hardware: 6/20; Interaction: 15/20",
+      "Chi-square": 8.1203007518797,
+      "df": 1,
+      "p": 0.004377229666547476,
+      "Phi": 0.450563556889583
+    },
+    {
+      "Comparison": "Failure timing",
+      "Detected counts": "Early: 7/20; Late: 12/20",
+      "Not detected counts": "Early: 13/20; Late: 8/20",
+      "Chi-square": 2.5062656641604013,
+      "df": 1,
+      "p": 0.11339435127837842,
+      "Phi": 0.25031308716087947
+    }
+  ],
+  "detection_by_group": [
+    {
+      "Group": "G1",
+      "Failure type": "Hardware",
+      "Timing": "Late",
+      "Detected": 9,
+      "Not detected": 1,
+      "Detection rate": 90.0
+    },
+    {
+      "Group": "G2",
+      "Failure type": "Interaction",
+      "Timing": "Late",
+      "Detected": 3,
+      "Not detected": 7,
+      "Detection rate": 30.0
+    },
+    {
+      "Group": "G3",
+      "Failure type": "Hardware",
+      "Timing": "Early",
+      "Detected": 5,
+      "Not detected": 5,
+      "Detection rate": 50.0
+    },
+    {
+      "Group": "G4",
+      "Failure type": "Interaction",
+      "Timing": "Early",
+      "Detected": 2,
+      "Not detected": 8,
+      "Detection rate": 20.0
+    },
+    {
+      "Group": "Total",
+      "Failure type": "",
+      "Timing": "",
+      "Detected": 19,
+      "Not detected": 21,
+      "Detection rate": 47.5
+    }
+  ],
+  "successful_recovery": {
+    "count": 1,
+    "full_sample_percentage": 2.5,
+    "detectors_percentage": 5.2631578947368425
+  },
+  "change_descriptives": [
+    {
+      "Comparison level": "Failure type",
+      "Condition": "Hardware",
+      "N": 20,
+      "Mean change": -0.40875000000000006,
+      "SD": 0.660431228739781
+    },
+    {
+      "Comparison level": "Failure type",
+      "Condition": "Interaction",
+      "N": 20,
+      "Mean change": -0.2749999999999999,
+      "SD": 0.8173891362135908
+    },
+    {
+      "Comparison level": "Failure timing",
+      "Condition": "Early",
+      "N": 20,
+      "Mean change": -0.27624999999999994,
+      "SD": 0.684447770103753
+    },
+    {
+      "Comparison level": "Failure timing",
+      "Condition": "Late",
+      "N": 20,
+      "Mean change": -0.4074999999999999,
+      "SD": 0.7976053799375123
+    },
+    {
+      "Comparison level": "Experimental cell",
+      "Condition": "Hardware / Early",
+      "N": 10,
+      "Mean change": -0.5049999999999999,
+      "SD": 0.5077250458882469
+    },
+    {
+      "Comparison level": "Experimental cell",
+      "Condition": "Hardware / Late",
+      "N": 10,
+      "Mean change": -0.31250000000000006,
+      "SD": 0.8015176576692217
+    },
+    {
+      "Comparison level": "Experimental cell",
+      "Condition": "Interaction / Early",
+      "N": 10,
+      "Mean change": -0.04750000000000001,
+      "SD": 0.784170651778751
+    },
+    {
+      "Comparison level": "Experimental cell",
+      "Condition": "Interaction / Late",
+      "N": 10,
+      "Mean change": -0.5024999999999997,
+      "SD": 0.8249537024046328
+    }
+  ],
+  "two_way_anova": [
+    {
+      "Source": "Failure type",
+      "SS": 0.17889062500000108,
+      "df": 1,
+      "MS": 0.17889062500000108,
+      "F": 0.3258945091229987,
+      "p": 0.571633244892617,
+      "Partial eta squared": 0.008971410436738249
+    },
+    {
+      "Source": "Failure timing",
+      "SS": 0.17226562499999432,
+      "df": 1,
+      "MS": 0.17226562499999432,
+      "F": 0.3138253963735628,
+      "p": 0.5788119048297488,
+      "Partial eta squared": 0.008642036275387902
+    },
+    {
+      "Source": "Failure type × timing",
+      "SS": 1.048140625000002,
+      "df": 1,
+      "MS": 1.048140625000002,
+      "F": 1.909453189490767,
+      "p": 0.1755394318830006,
+      "Partial eta squared": 0.050368787435322436
+    }
+  ],
+  "anova_assumptions": {
+    "Residual Shapiro W": 0.9789442223077839,
+    "Residual Shapiro p": 0.6503726998355984,
+    "Levene F": 0.3520212875661439,
+    "Levene df1": 3,
+    "Levene df2": 36,
+    "Levene p": 0.7879160978435736,
+    "Maximum absolute standardized residual": 2.5751471522835163,
+    "Maximum Cook's D": 0.18420507933094177,
+    "Residual SS": 19.761187500000002,
+    "Residual df": 36,
+    "Residual MS": 0.548921875,
+    "Total SS": 21.160484375000003,
+    "Total df": 39
+  },
+  "retrospective": {
+    "felt_difference": 19,
+    "felt_no_difference": 21,
+    "comparison_table": [
+      {
+        "Retrospective question": "Session liked more",
+        "No difference n": 23,
+        "No difference %": 57.5,
+        "Control session n": 15,
+        "Control session %": 37.5,
+        "Failure session n": 2,
+        "Failure session %": 5.0
+      },
+      {
+        "Retrospective question": "Session perceived as more understandable",
+        "No difference n": 21,
+        "No difference %": 52.5,
+        "Control session n": 16,
+        "Control session %": 40.0,
+        "Failure session n": 3,
+        "Failure session %": 7.5
+      },
+      {
+        "Retrospective question": "Session perceived as providing more value",
+        "No difference n": 26,
+        "No difference %": 65.0,
+        "Control session n": 12,
+        "Control session %": 30.0,
+        "Failure session n": 2,
+        "Failure session %": 5.0
+      },
+      {
+        "Retrospective question": "Session participants would choose to repeat",
+        "No difference n": 23,
+        "No difference %": 57.5,
+        "Control session n": 13,
+        "Control session %": 32.5,
+        "Failure session n": 4,
+        "Failure session %": 10.0
+      }
+    ]
+  }
+}

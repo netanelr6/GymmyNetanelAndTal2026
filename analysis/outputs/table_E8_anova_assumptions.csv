@@ -1,0 +1,14 @@
+﻿Diagnostic,Value
+Residual Shapiro W,0.9789442223077839
+Residual Shapiro p,0.6503726998355984
+Levene F,0.3520212875661439
+Levene df1,3
+Levene df2,36
+Levene p,0.7879160978435736
+Maximum absolute standardized residual,2.5751471522835163
+Maximum Cook's D,0.18420507933094177
+Residual SS,19.761187500000002
+Residual df,36
+Residual MS,0.548921875
+Total SS,21.160484375000003
+Total df,39
