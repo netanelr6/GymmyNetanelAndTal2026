@@ -1239,6 +1239,36 @@ def main() -> None:
         )
     write_csv(output_dir / "table_F1_participant_detection_coding.csv", coding_output)
 
+    # Convenience exports matching the table numbers used in the main report.
+    report_table_7 = []
+    for group in ["G1", "G2", "G3", "G4"]:
+        selected = [row for row in clean_rows if f"G{row['Group']}" == group]
+        report_table_7.append(
+            {
+                "Group": group,
+                "Failure type": selected[0]["Failure type"],
+                "Failure timing": selected[0]["Timing"],
+                "N": len(selected),
+            }
+        )
+    write_csv(output_dir / "report_table_07_experimental_groups.csv", report_table_7)
+    write_csv(output_dir / "report_table_08_nars_tap_descriptives.csv", pre_statistics)
+    write_csv(output_dir / "report_table_09_paired_comparison.csv", paired_rows)
+    write_csv(output_dir / "report_table_11_detection_by_group.csv", group_detection_rows)
+    write_csv(output_dir / "report_table_12_retrospective_comparison.csv", retrospective_rows)
+
+    code_output_map_rows = [
+        {"Report section": "5.1 Data preparation", "Code function / calculation": "load_tracking; load_post_session_scores; build_clean_analysis_rows", "Supporting appendix table": "E.1"},
+        {"Report section": "5.2 Sample and prior attitudes", "Code function / calculation": "load_pre_experience; descriptive mean and sample SD", "Supporting appendix table": "E.2"},
+        {"Report section": "5.3 Overall effect of failure", "Code function / calculation": "paired_test_row", "Supporting appendix table": "E.3"},
+        {"Report section": "5.4 Detection and recovery", "Code function / calculation": "Pearson chi-square contingency tables; manual coding input", "Supporting appendix table": "E.4-E.5 and F.1"},
+        {"Report section": "5.5 Failure type", "Code function / calculation": "Descriptive change scores and two-way ANOVA main effect", "Supporting appendix table": "E.6-E.8"},
+        {"Report section": "5.6 Failure timing", "Code function / calculation": "Descriptive change scores and two-way ANOVA main effect", "Supporting appendix table": "E.6-E.8"},
+        {"Report section": "5.7 Type x timing", "Code function / calculation": "Two-way ANOVA interaction term", "Supporting appendix table": "E.6-E.8"},
+        {"Report section": "5.8 Retrospective comparison", "Code function / calculation": "Session-order recoding and frequency counts", "Supporting appendix table": "E.9"},
+    ]
+    write_csv(output_dir / "table_G1_code_output_map.csv", code_output_map_rows)
+
     report_values = {
         "sample": {
             "recruited": 44,
