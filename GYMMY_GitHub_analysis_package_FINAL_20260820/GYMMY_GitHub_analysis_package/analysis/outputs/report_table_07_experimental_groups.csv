@@ -1,0 +1,5 @@
+﻿Group,Failure type,Failure timing,N
+G1,Hardware,Late,10
+G2,Interaction,Late,10
+G3,Hardware,Early,10
+G4,Interaction,Early,10
