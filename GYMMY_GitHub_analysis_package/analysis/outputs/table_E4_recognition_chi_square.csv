@@ -1,3 +1,0 @@
-﻿Comparison,Recognized counts,Not Recognized counts,Chi-square,df,p,Phi
-Failure type,Hardware: 14/20; Interaction: 5/20,Hardware: 6/20; Interaction: 15/20,8.1203007518797,1,0.004377229666547476,0.450563556889583
-Failure timing,Early: 7/20; Late: 12/20,Early: 13/20; Late: 8/20,2.5062656641604013,1,0.11339435127837842,0.25031308716087947

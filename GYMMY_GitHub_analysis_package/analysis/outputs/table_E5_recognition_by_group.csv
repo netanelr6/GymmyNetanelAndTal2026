@@ -1,6 +1,0 @@
-﻿Group,Failure type,Timing,Recognized,Not Recognized,Recognition rate
-G1,Hardware,Late,9,1,90.0
-G2,Interaction,Late,3,7,30.0
-G3,Hardware,Early,5,5,50.0
-G4,Interaction,Early,2,8,20.0
-Total,,,19,21,47.5

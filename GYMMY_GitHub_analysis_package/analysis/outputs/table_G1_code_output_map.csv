@@ -1,9 +1,0 @@
-﻿Report section,Code function / calculation,Supporting appendix table
-5.1 Data preparation,load_tracking; load_post_session_scores; build_clean_analysis_rows,E.1
-5.2 Sample and prior attitudes,load_pre_experience; descriptive mean and sample SD,E.2a–E.2b
-5.3 Effect of failure on Acceptance,paired_test_row,E.3
-5.4 Recognition and recovery,Pearson chi-square contingency tables; manual recognition coding input,E.4-E.5 and F.1
-5.5 Failure type,Descriptive change scores and two-way ANOVA main effect,E.6-E.8
-5.6 Failure timing,Descriptive change scores and two-way ANOVA main effect,E.6-E.8
-5.7 Type x timing,Two-way ANOVA interaction term,E.6-E.8
-5.8 Retrospective comparison,Session-order recoding and frequency counts,E.9
